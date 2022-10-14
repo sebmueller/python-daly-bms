@@ -101,6 +101,7 @@ def build_mqtt_hass_config_discovery(base):
         hass_config_data["device_class"] = 'battery'
         hass_config_data["unit_of_measurement"] = '%'
     elif 'voltage' in base:
+        print("voltage!!!")
         hass_config_data["device_class"] = 'voltage'
         hass_config_data["unit_of_measurement"] = 'V'
     elif 'current' in base:
@@ -153,7 +154,6 @@ def mqtt_iterator(result, base=''):
 def print_result(result):
     if args.mqtt:
         mqtt_iterator(result)
-        print(result)
     else:
         print(json.dumps(result, indent=2))
 

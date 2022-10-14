@@ -102,6 +102,7 @@ def build_mqtt_hass_config_discovery(base):
         hass_config_data["unit_of_measurement"] = '%'
     elif 'voltage' in base:
         print("voltage!!!")
+        print(base)
         hass_config_data["device_class"] = 'voltage'
         hass_config_data["unit_of_measurement"] = 'V'
     elif 'current' in base:

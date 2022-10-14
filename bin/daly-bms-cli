@@ -101,12 +101,9 @@ def build_mqtt_hass_config_discovery(base):
         hass_config_data["device_class"] = 'battery'
         hass_config_data["unit_of_measurement"] = '%'
     elif 'voltage' in base:
-        print("voltage!!!")
-        print(base)
         # exclude highest / lowest cell no
         if '_cell' in base:
             hass_config_data["device_class"] = 'None'
-            print("das hier nicht mehr")
         else:
             hass_config_data["device_class"] = 'voltage'
             hass_config_data["unit_of_measurement"] = 'V'
@@ -126,9 +123,6 @@ def build_mqtt_hass_config_discovery(base):
         hass_config_data["device_class"] = 'battery'
         hass_config_data["unit_of_measurement"] = 'Ah'
     else:
-        print("der rest")
-        print(base)
-
         pass
 
     hass_config_data["json_attributes_topic"] = f'{args.mqtt_topic}{base}'

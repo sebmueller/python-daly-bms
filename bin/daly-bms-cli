@@ -153,6 +153,7 @@ def mqtt_iterator(result, base=''):
 def print_result(result):
     if args.mqtt:
         mqtt_iterator(result)
+        print(result)
     else:
         print(json.dumps(result, indent=2))
 
